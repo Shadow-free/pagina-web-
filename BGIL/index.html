@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGIL - Soluciones Logísticas Nacionales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6eff2; /* Más gris-azul claro */
+            color: #333; /* Dark text for readability */
+            line-height: 1.6;
+        }
+
+        /* Header and Navigation */
+        header {
+            /* Degradado sutil en el fondo del header */
+            background: linear-gradient(to right, #34495e, #4a6a8a); /* Degradado de gris-azul oscuro a un poco más claro */
+            color: #ecf0f1; /* Light text */
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-weight: 600;
+            padding: 10px 15px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #2c3e50; /* Color oscuro para contraste en hover */
+            background-color: #8be0ff; /* Un azul vibrante para el hover */
+        }
+
+        /* Logo Styling */
+        .header-logo-container {
+            text-align: center; /* Centrar el logo */
+            padding: 15px 0 10px; /* Espaciado alrededor del logo */
+        }
+
+        .header-logo-container img {
+            max-width: 150px; /* Ajusta el tamaño del logo según sea necesario */
+            height: auto;
+            display: block; /* Asegura que 'max-width' funcione correctamente */
+            margin: 0 auto; /* Centrar la imagen dentro de su contenedor */
+            /* filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); */ /* Puedes añadir un sutil drop-shadow si quieres más "degradado" visual en el logo */
+        }
+
+        /* Main Content Sections */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            opacity: 0; /* Hidden by default for fade-in animation */
+            transform: translateY(20px); /* Slightly moved down for slide-up effect */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section-image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '•'; /* Custom bullet point */
+            color: #8be0ff; /* Match highlight color */
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Contact Section Specifics */
+        .contact-info {
+            text-align: center;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+
+            .header-logo-container img {
+                max-width: 120px; /* Ajusta el tamaño del logo para móviles */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#quienes-somos" class="nav-link">Quiénes Somos</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#contactos" class="nav-link">Contactos</a></li>
+            </ul>
+        
+    </header>
+
+    <main>
+        <section id="quienes-somos" class="container">
+            <h2>BGIL: Su Socio Estratégico en Logística Nacional</h2>
+
+            <p>
+                En BGIL, nos dedicamos a ofrecer soluciones logísticas integrales y de alta eficiencia en todo el territorio nacional. Nos especializamos en servicios de recogida y entrega diseñados meticulosamente para satisfacer las exigencias de pequeñas, medianas y grandes empresas. Nuestro compromiso es optimizar su cadena de suministro, asegurando una gestión de transporte fluida y una ejecución puntual de todas sus operaciones logísticas. Con BGIL, su eficiencia es nuestra prioridad</p>
+                
+
+
+                En este momento, en el vibrante corazón de la República Dominicana, donde el pulso de la economía exige conexión y dinamismo, BGIL Soluciones está abriendo sus puertas. No es simplemente una empresa más; es la materialización de una profunda visión y la convicción de que la logística puede —y debe— ser más eficiente, personalizada y cercana.</p>
+
+            <p>
+                Desde este instante, con un equipo lleno de energía y una visión clara, BGIL se dedica a abordar una necesidad crucial: la de las pequeñas y medianas empresas que a menudo se enfrentan a desafíos logísticos desproporcionados. Las demoras, la falta de seguimiento y la sensación de ser un número en el mercado son realidades que BGIL se propone cambiar. Estamos aquí para ser el socio estratégico que esas empresas, y muchas otras, necesitan.</p>
+
+            <p>  En nuestros comienzos, cada paso se da con pasión y determinación. Nuestra premisa es simple pero poderosa y la vivimos cada día: "Nosotros somos servicio." Esta frase no es solo un eslogan; es el compromiso que grabamos en cada recogida, en cada entrega, en cada solución que ofrecemos.</p>
+
+              <p>  Ahora mismo, construimos relaciones de confianza con cada cliente, demostrando que la puntualidad y el cuidado en la manipulación de la mercancía son pilares innegociables. Cada desafío que se presenta es una oportunidad para innovar, adoptando las herramientas y tecnologías más adecuadas para optimizar rutas y mejorar la comunicación en tiempo real.</p>
+
+            <p>   El valor de la Responsabilidad se manifiesta en cada paquete que entregamos seguro y a tiempo. La Confianza se gana con la transparencia total y la honestidad en cada interacción, construyendo lazos sólidos con quienes confían en nosotros. La Eficiencia es nuestro mantra diario, optimizando cada proceso para ofrecer un servicio ágil y rentable, permitiendo a nuestros clientes enfocarse en el crecimiento de sus propios negocios.</p>
+            </p>
+            <img src="C:\Users\benja\OneDrive\Desktop\BGIL/img1.jpg" alt="Logística BGIL" class="section-image">
+
+            <h2>Misión</h2>
+            <p>
+                En Bgil Soluciones, nuestra misión es ofrecer un servicio de transporte de mercancías confiable, eficiente y seguro para pequeñas empresas, contribuyendo al crecimiento de nuestros clientes mediante soluciones logísticas personalizadas y accesibles.
+            </p>
+            <img src="C:\Users\benja\OneDrive\Desktop\BGIL/img2.jpg" alt="Misión de BGIL" class="section-image">
+
+            <h2>Visión</h2>
+            <p>
+                Ser la empresa líder en servicios de transporte para pequeñas empresas en la región, reconocida por nuestra puntualidad, atención personalizada e innovación tecnológica en la gestión logística.
+            </p>
+            <img src="C:\Users\benja\OneDrive\Desktop\BGIL/img3.jpg" alt="Visión de BGIL" class="section-image">
+
+            <h2>Valores</h2>
+            <ul>
+                <li><strong>Responsabilidad:</strong> Cumplimos con los compromisos adquiridos, asegurando entregas seguras y a tiempo.</li>
+                <li><strong>Confianza:</strong> Construimos relaciones sólidas y transparentes con cada cliente.</li>
+                <li><strong>Eficiencia:</strong> Optimizamos cada proceso para ofrecer un servicio ágil y rentable.</li>
+                <li><strong>Compromiso con el cliente:</strong> Adaptamos nuestras soluciones a las necesidades de cada negocio.</li>
+                <li><strong>Innovación:</strong> Incorporamos herramientas modernas para mejorar la experiencia y la calidad del servicio.</li>
+            </ul>
+            <img src="C:\Users\benja\OneDrive\Desktop\BGIL/img4.jpg" alt="Valores de BGIL" class="section-image">
+        </section>
+
+        <section id="servicios" class="container">
+            <h2>Soluciones Logísticas Nacionales para Empresas</h2>
+            <p>
+                Ofrecemos servicios logísticos integrales en todo el territorio nacional, especializándonos en soluciones eficientes y confiables de recogida y entrega diseñadas para satisfacer las diversas necesidades de pequeñas, medianas y grandes empresas. Nuestro compromiso es optimizar las operaciones de su cadena de suministro, asegurando un transporte fluido y una ejecución puntual para todos sus requerimientos logísticos.
+            </p>
+
+            <h2>BGIL: Pilares de Nuestro Servicio Logístico</h2>
+
+            <h3>Transporte Seguro y Confiable</h3>
+            <p>
+                En BGIL, entendemos que la seguridad de su carga es primordial. Por eso, implementamos rigurosos protocolos de seguridad en cada etapa del transporte. Desde la selección de rutas óptimas hasta la monitorización constante de cada envío, nos aseguramos de que sus productos lleguen a su destino en perfectas condiciones. Nuestra flota de vehículos está equipada con tecnología de punta y es mantenida bajo los más altos estándares, y nuestro personal está capacitado para manejar todo tipo de mercancías con el máximo cuidado. Con BGIL, la confiabilidad no es solo una promesa, es una garantía en cada entrega.
+            </p>
+            <img src="C:\Users\benja\OneDrive\Desktop\BGIL/img5.jpg" alt="Transporte Seguro" class="section-image">
+
+            <h3>Calidad y Puntualidad</h3>
+            <p>
+                La calidad en el servicio de BGIL se refleja en cada interacción y en cada entrega. Nos esforzamos por superar las expectativas de nuestros clientes, ofreciendo soluciones logísticas que no solo cumplen, sino que exceden los estándares de la industria. La puntualidad es un pilar inquebrantable de nuestro compromiso. Sabemos que el tiempo es un activo valioso para su negocio, por lo que nuestras operaciones están diseñadas para garantizar entregas a tiempo, optimizando cada paso del proceso para evitar retrasos y asegurar que su cadena de suministro funcione sin interrupciones.
+            </p>
+            <img src="C:\Users\benja\OneDrive\Desktop\BGIL/img6.jpg" alt="Calidad y Puntualidad" class="section-image">
+
+            <h3>Cuidado de sus Productos</h3>
+            <p>
+                Para BGIL, cada producto que nos confía es tratado con el máximo cuidado y respeto. Desde el momento de la recogida hasta la entrega final, aplicamos las mejores prácticas en manipulación, embalaje y almacenamiento. Nuestro personal está altamente capacitado en el manejo de diversas mercancías, incluyendo aquellas que requieren condiciones especiales. Empleamos sistemas de protección avanzados y monitoreo ambiental cuando es necesario, asegurando que la integridad de sus productos se mantenga intacta durante todo el trayecto. Con BGIL, sus productos están en manos expertas y seguras.
+            </p>
+         
+        </section>
+
+        <section id="contactos" class="container">
+            <h2>Contactos</h2>
+            <div class="contact-info">
+                <p><strong>Teléfono:</strong> 829-548-1501</p>
+                <p><strong>Teléfono:</strong> 829-451-9661</p>
+                <p><strong>Dirección:</strong> C/ Verano n5 Pantoja</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 BGIL. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Get the target section's ID from the href attribute
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                // Scroll to the target element smoothly
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start' // Scrolls to the top of the element
+                    });
+                }
+
+                // Optional: Add active class to clicked nav link
+                document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Simple Intersection Observer for fade-in effect on scroll
+        const faders = document.querySelectorAll('.container');
+
+        const appearOptions = {
+            threshold: 0.3, // When 30% of the element is visible
+            rootMargin: "0px 0px -50px 0px" // Start animating a bit before it reaches the center
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        // Set the first menu item as active on page load
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const firstNavLink = document.querySelector('nav ul li a');
+            if (firstNavLink) {
+                firstNavLink.classList.add('active');
+            }
+        });
+
+        // Optional: Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
